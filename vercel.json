@@ -10,7 +10,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "sindoor/index.html"
+      "dest": "/sindoor/$1"
     }
   ]
 } 
