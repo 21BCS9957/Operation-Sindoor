@@ -1,0 +1,13 @@
+# Node / Frontend
+sindoor/node_modules/
+sindoor/dist/
+sindoor/.env*
+sindoor/.DS_Store
+
+# Rust / Backend
+sindoor-backend/target/
+sindoor-backend/.DS_Store
+
+# General
+.DS_Store
+*.log 
