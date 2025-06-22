@@ -77,13 +77,13 @@ This project is a monorepo and requires separate deployments for the frontend an
 
 ### Backend (Rust)
 
-The Rust backend must be deployed to a service that supports persistent, long-running applications. Vercel cannot host this type of server. Recommended services include:
+The Rust backend must be deployed to a service that supports persistent, long-running applications. This project is pre-configured for one-click deployment on [Railway](https://railway.app/).
 
--   [Railway](https://railway.app/)
--   [Fly.io](https://fly.io/)
--   [Shuttle](https://www.shuttle.rs/)
-
-After deploying your backend, you will get a public URL (e.g., `https://your-backend-url.com`). You will need this for the frontend configuration.
+1.  **Create a Railway Account** and log in.
+2.  Click **New Project**.
+3.  Select **Deploy from GitHub repo** and choose your `Operation-Sindoor` repository.
+4.  Railway will automatically detect the `railway.json` file in the `sindoor-backend` directory and build and deploy the service. No further configuration is needed.
+5.  Once the deployment is complete, go to the **Settings** tab for your service and find the **Public URL** (e.g., `https://operation-sindoor-backend-production.up.railway.app`). You will need this for the frontend.
 
 ### Frontend (React)
 
@@ -99,7 +99,7 @@ The frontend is configured for deployment on [Vercel](https://vercel.com/).
     -   In your Vercel project's settings, go to "Environment Variables".
     -   Create a new variable:
         -   **Name**: `VITE_API_BASE_URL`
-        -   **Value**: The URL of your deployed Rust backend (e.g., `https://your-backend-url.com`).
+        -   **Value**: The Public URL of your deployed Rust backend from Railway.
 4.  **Deploy**.
 
-Vercel will now correctly build and deploy only the frontend application from the `sindoor` subdirectory. 
+Vercel will now correctly build and deploy only the frontend application from the `sindoor` subdirectory, and it will be able to communicate with your live backend. 
